@@ -146,7 +146,11 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" ><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="打工人的博客" type="application/atom+xml">
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" ><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="打工人的博客" type="application/atom+xml">
 </head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">打工人的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">汇编语言知识整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-06T02:10:57.000Z" title="Created 2021-12-06 10:10:57">2021-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-06T03:29:03.341Z" title="Updated 2021-12-06 11:29:03">2021-12-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="汇编语言知识整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ol>
 <li><p>AX的寄存器值若是0304，则AH是03，AL是04<br><img src="https://s2.loli.net/2021/12/06/ETUWopzN6V5IrhJ.png" alt="image-20211206101919971"></p>
 </li>
@@ -158,32 +162,14 @@
 </li>
 <li><p>80*25彩色模式</p>
 <p>DOS窗口一行可以显示80个字符，一行160个字节。总共有25行，这被当作一页。每个字符两个字节，总共4000B，近似4KB。</p>
-<p>显存总共32KB，从B8000H—BFFFFH。</p>
+<p>显存总共32KB，从B8000H—-BFFFFH。</p>
 <p>显示器默认显示第0页。</p>
 <p>每个字符占两个字节，高位字节表示颜色属性，地位字节表示字符的ASCII码。</p>
 <p>颜色属性总共有8位</p>
 <p><img src="https://s2.loli.net/2021/12/06/f7OjAnSswTyB3ie.png" alt="image-20211206110912459"></p>
 </li>
 <li><p>内中断 int 21h</p>
-<table>
-<thead>
-<tr>
-<th>AH</th>
-<th>功能</th>
-<th>调用参数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>02</td>
-<td>显示输出</td>
-<td>DL=输出字符</td>
-</tr>
-<tr>
-<td>4C</td>
-<td>带返回码结束</td>
-<td>AL=返回码</td>
-</tr>
-</tbody></table>
+<p>| AH   | 功能         | 调用参数    |<br>| —— | —————— | —————- |<br>| 02   | 显示输出     | DL=输出字符 |<br>| 4C   | 带返回码结束 | AL=返回码   |</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ynwlgh/archive/2011/12/12/2285017.html">INT 21H 指令说明</a></p>
 </li>
 </ol>

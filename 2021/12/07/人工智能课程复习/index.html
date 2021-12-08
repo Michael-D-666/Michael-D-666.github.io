@@ -147,7 +147,11 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" ><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="打工人的博客" type="application/atom+xml">
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" ><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="打工人的博客" type="application/atom+xml">
 </head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">打工人的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">人工智能课程复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-07T01:25:16.000Z" title="Created 2021-12-07 09:25:16">2021-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-07T10:29:15.633Z" title="Updated 2021-12-07 18:29:15">2021-12-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="人工智能课程复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第一章-人工智能概述"><a href="#第一章-人工智能概述" class="headerlink" title="第一章      人工智能概述"></a>第一章      人工智能概述</h2><ol>
 <li><p>什么是智能？智能包含哪几种能力</p>
 <p>智能是对自然智能的简称。从生理角度看，智能是中枢神经系统的信号加工过程及其产物；从心理角度看，智能是智力和能力的总称。<br>智能包含感知能力、记忆和思维能力、学习和自适应能力、行为能力等 。</p>
@@ -162,12 +166,12 @@
 </li>
 <li><p>人工智能主要有哪几个学派，各自的特点是什么？</p>
 <p>主要有：符号主义学派、连接主义学派、行为主义学派。</p>
-<p>符号主义学派：人工智能的研究应该采用功能模拟的方法。通过研究人类认知系统的功能，再用计算机模拟，从而实现人工智能。</p>
-<p>连接主义学派：人工智能的研究应该采用结构模拟的方法。着重模拟人类神经网络的生理结构。</p>
 </li>
 </ol>
+<p>   符号主义学派：人工智能的研究应该采用功能模拟的方法。通过研究人类认知系统的功能，再用计算机模拟，从而实现人工智能。</p>
+<p>   连接主义学派：人工智能的研究应该采用结构模拟的方法。着重模拟人类神经网络的生理结构。</p>
 <p>   行为主义学派：人工智能的研究应该采用行为模拟的方法。不同的行为表现出不同的功能和不同的控制结构。</p>
-<ol start="5">
+<ol>
 <li><p>人工智能有哪些主要研究和应用领域？其中哪些是新的研究热点？</p>
 <p>主要研究和应用领域：机器思维、机器学习、机器感知、机器行为、计算智能、分布智能、智能系统、人工心理和人工情感。</p>
 </li>
@@ -186,6 +190,8 @@
 <p>推理是由具体实例归纳出一般规律，或者是根据已有知识推出新的理论的思维过程。</p>
 <p>分类方法：按推理的逻辑基础分类；按所用知识的确定性分类。</p>
 </li>
+</ol>
+<ol>
 <li><pre><code>设有如下语句，请用相应的谓词公式分别把他们表示出来
 （1）有的人喜欢梅花，有的人喜欢菊花，有的人既喜欢梅花，又喜欢菊花
 （2） 有的人每天下午都去打篮球
@@ -199,8 +205,7 @@
 （3）P(f(x),y)，P(y,f(b))
 （4）P(f(y),y,x)，P(x,f(a),f(b))
 （5）P(x,y)，P(y,x)
-</code></pre>
-<p>(1)可合一，最一般合一为{a/x,b/y}</p>
+</code></pre><p>(1)可合一，最一般合一为{a/x,b/y}</p>
 <p>(2)</p>
 </li>
 <li><p>什么是谓词公式的可满足性？什么是谓词公式的不可满足性？</p>
@@ -211,12 +216,11 @@
 <p>若前束范式中的存在量词都在全称两次之前，则这种形式的谓词公式为Skolem范式</p>
 </li>
 <li><p>将下列谓词公式转化为子句集</p>
-<img src="https://s2.loli.net/2021/12/07/f34tYKNMr9P7e6G.png" alt="image-20211207180237431" style="zoom:50%;"/>
-
+<p><img src="https://s2.loli.net/2021/12/07/f34tYKNMr9P7e6G.png" alt="image-20211207180237431" style="zoom:50%;"/></p>
 <p>因为已经是前束范式，所以直接开始消去存在量词。但式子中没有存在量词，所以开始变为Skolem标准型，即：将母式变为子句的合取，本例中已经完成。接着，消去全称量词，之前删去。消去合取，每一个元素就是一个子句。最后更换变元：两个子句变元不能相同</p>
 <p>答案：{P(x,y),Q(u,v)}</p>
 </li>
 </ol>
-<p>$$<br>(\forall (x))(\forall (y))(P(x)\Rightarrow Q(x,y))<br>$$</p>
-<p>​       因为已经是前束范式且没有存在量词，所以化为Skolem标准型，</p>
+<script type="math/tex; mode=display">
+(\forall (x))(\forall (y))(P(x)\Rightarrow Q(x,y))</script><p>​       因为已经是前束范式且没有存在量词，所以化为Skolem标准型，</p>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">早八打工人</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://michael-d-666.github.io/2021/12/07/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/">https://michael-d-666.github.io/2021/12/07/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/">大三课程</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/12/06/NuistOJ/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">NuistOJ</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">早八打工人</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">第一章      人工智能概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">第二章         确定性知识系统</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/07/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/" title="人工智能课程复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人工智能课程复习"/></a><div class="content"><a class="title" href="/2021/12/07/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/" title="人工智能课程复习">人工智能课程复习</a><time datetime="2021-12-07T01:25:16.000Z" title="Created 2021-12-07 09:25:16">2021-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/06/NuistOJ/" title="NuistOJ"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NuistOJ"/></a><div class="content"><a class="title" href="/2021/12/06/NuistOJ/" title="NuistOJ">NuistOJ</a><time datetime="2021-12-06T09:17:31.000Z" title="Created 2021-12-06 17:17:31">2021-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/06/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" title="汇编语言知识整理"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="汇编语言知识整理"/></a><div class="content"><a class="title" href="/2021/12/06/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" title="汇编语言知识整理">汇编语言知识整理</a><time datetime="2021-12-06T02:10:57.000Z" title="Created 2021-12-06 10:10:57">2021-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/05/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/12/05/hello-world/" title="Hello World">Hello World</a><time datetime="2021-12-05T14:59:02.219Z" title="Created 2021-12-05 22:59:02">2021-12-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 早八打工人</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
