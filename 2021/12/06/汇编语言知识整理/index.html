@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-12-06T02:10:57.000Z">
-<meta property="article:modified_time" content="2021-12-17T10:40:00.318Z">
+<meta property="article:modified_time" content="2021-12-19T02:49:35.949Z">
 <meta property="article:author" content="早八打工人">
 <meta property="article:tag" content="大三课程">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2021-12-17 18:40:00'
+  postUpdate: '2021-12-19 10:49:35'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -148,7 +148,7 @@
     }
     detectApple()
     })(window)</script><link rel="stylesheet" href="/css/custom.css" ><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="打工人的博客" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">打工人的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">汇编语言知识整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-06T02:10:57.000Z" title="Created 2021-12-06 10:10:57">2021-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-17T10:40:00.318Z" title="Updated 2021-12-17 18:40:00">2021-12-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="汇编语言知识整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ol>
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">打工人的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">汇编语言知识整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-06T02:10:57.000Z" title="Created 2021-12-06 10:10:57">2021-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-19T02:49:35.949Z" title="Updated 2021-12-19 10:49:35">2021-12-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="汇编语言知识整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ol>
 <li><p>通用寄存器：AX、BX、CX、DX<br>指针寄存器：SP、BP<br>变址寄存器：SI、DI<br>控制寄存器：IP、标志寄存器<br>段寄存器：CS、DS、SS、ES</p>
 </li>
 <li><p>AX的寄存器值若是0304，则AH是03，AL是04<br><img src="https://s2.loli.net/2021/12/06/ETUWopzN6V5IrhJ.png" alt="image-20211206101919971"></p>
@@ -231,8 +231,13 @@
 </li>
 </ol>
 <h2 id="第9章-转移指令"><a href="#第9章-转移指令" class="headerlink" title="第9章     转移指令"></a>第9章     转移指令</h2><ol>
-<li><strong>je  标号</strong>   ，根据标志位ZF（0标志位）跳转。若标志位为1，则跳转到标号位置。   </li>
-<li><strong>jmp BX</strong> ， 相当于mov IP,BX</li>
+<li><p><strong>je  标号</strong>   ，根据标志位ZF（0标志位）跳转。若标志位为1，则跳转到标号位置。   </p>
+</li>
+<li><p><strong>jmp BX</strong> ， 相当于mov IP,BX</p>
+<p><strong>jmp word ptr ds:[0]</strong> :内存单元中存放着一个字，是转移目的的偏移地址</p>
+<p><strong>jmp dword ptr ds:[0]</strong>：内存单元中存放着两个字，高地址是段地址，低地址是偏移地址</p>
+<p><strong>jcxz  标号</strong>：如果cx是0，则转移到标号处执行</p>
+</li>
 </ol>
 <hr>
 <h2 id="第10章-call指令和RET指令"><a href="#第10章-call指令和RET指令" class="headerlink" title="第10章         call指令和RET指令"></a>第10章         call指令和RET指令</h2><ol>
