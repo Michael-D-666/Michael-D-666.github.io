@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaodaidai666.gitee.io/2021/12/16/%E8%AE%B0%E4%B8%8D%E4%BD%8F%E7%9A%84Web%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/</loc>
+    
+    <lastmod>2021-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaodaidai666.gitee.io/2021/12/17/%E6%9C%89%E7%82%B9%E6%9D%A5%E4%B8%8D%E5%8F%8A%E7%9A%84J2EE/</loc>
     
     <lastmod>2021-12-22</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://xiaodaidai666.gitee.io/2021/12/21/%E7%AE%80%E5%8D%95%E7%9A%84c-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2021-12-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaodaidai666.gitee.io/2021/12/16/%E8%AE%B0%E4%B8%8D%E4%BD%8F%E7%9A%84Web%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/</loc>
-    
-    <lastmod>2021-12-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -92,13 +92,6 @@
 
   
   <url>
-    <loc>https://xiaodaidai666.gitee.io/tags/OJ-ACM/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaodaidai666.gitee.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,7 +99,7 @@
   </url>
   
   <url>
-    <loc>https://xiaodaidai666.gitee.io/tags/https-www-yulumi-cn-gl-uploads-allimg-201128-1622552243-4-jpg/</loc>
+    <loc>https://xiaodaidai666.gitee.io/tags/OJ-ACM/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
