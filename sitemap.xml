@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaodaidai666.gitee.io/2021/12/12/%E4%BB%A4%E4%BA%BA%E7%BB%9D%E6%9C%9B%E7%9A%84%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    
+    <lastmod>2022-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaodaidai666.gitee.io/2021/12/31/Java8%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaodaidai666.gitee.io/2021/12/13/UNIX/</loc>
     
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2021-12-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -65,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://xiaodaidai666.gitee.io/2021/12/12/%E4%BB%A4%E4%BA%BA%E7%BB%9D%E6%9C%9B%E7%9A%84%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    
-    <lastmod>2021-12-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaodaidai666.gitee.io/2021/12/05/hello-world/</loc>
     
     <lastmod>2021-12-06</lastmod>
@@ -85,7 +94,7 @@
 
   <url>
     <loc>https://xiaodaidai666.gitee.io/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2022-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,14 +102,14 @@
   
   <url>
     <loc>https://xiaodaidai666.gitee.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2022-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xiaodaidai666.gitee.io/tags/OJ-ACM/</loc>
-    <lastmod>2021-12-26</lastmod>
+    <lastmod>2022-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
