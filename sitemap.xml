@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-d-666.github.io/2022/02/21/Day2-MySQL-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</loc>
+    
+    <lastmod>2022-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-d-666.github.io/2022/02/21/Day1-MySQL/</loc>
     
     <lastmod>2022-02-21</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://michael-d-666.github.io/2022/02/03/SpringBoot%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2022-02-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://michael-d-666.github.io/2022/01/09/android%E5%AD%A6%E4%B9%A0/</loc>
-    
-    <lastmod>2022-01-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,7 +121,7 @@
 
   <url>
     <loc>https://michael-d-666.github.io/</loc>
-    <lastmod>2022-02-21</lastmod>
+    <lastmod>2022-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,7 +129,7 @@
   
   <url>
     <loc>https://michael-d-666.github.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2022-02-21</lastmod>
+    <lastmod>2022-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
