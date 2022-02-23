@@ -6,7 +6,7 @@
   <link href="https://michael-d-666.github.io/atom.xml" rel="self"/>
   
   <link href="https://michael-d-666.github.io/"/>
-  <updated>2022-02-22T08:32:39.383Z</updated>
+  <updated>2022-02-23T06:39:41.426Z</updated>
   <id>https://michael-d-666.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day3-面试题.HashMap-Threalocal-垃圾回收</title>
+    <link href="https://michael-d-666.github.io/2022/02/23/Day3-HashMap-%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://michael-d-666.github.io/2022/02/23/Day3-HashMap-%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2022-02-23T00:12:24.000Z</published>
+    <updated>2022-02-23T06:39:41.426Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-HashMap"><a href="#1-HashMap" class="headerlink" title="1. HashMap"></a>1. HashMap</h2><h3 id="1-1-HashMap-的特点"><a href="#1-1-HashMap-的特点" class="headerlink" title="1.1 HashMap 的特点"></a>1.1 HashMap 的特点</h3><ul><li>最主要的特点是它<code>存储形式</code>为<code>键值对</code>。键值对的<code>键</code>是不能重读的，<code>值</code>是可以重复的，且可以为<code>null</code>。至于如何判定重复，则会在后面讲到。</li><li>线程不安全。想要线程安全的<code>HashMap</code>需要使用<code>ConcurrentHashMap</code></li><li>不保证插入的顺序。即存放的顺序不一定是遍历出来的顺序</li></ul><h3 id="1-2-HashMap-put的过程"><a href="#1-2-HashMap-put的过程" class="headerlink" title="1.2 HashMap put的过程"></a>1.2 HashMap put的过程</h3><p><code>HashMap</code>的底层结构是<code>数组+链表+红黑树</code></p><p><img src="https://s2.loli.net/2022/02/23/L25vOkrEys8fW4c.png" alt="image-20220223084340862"></p><ul><li>图中的<code>table</code>即数组(散列表)</li><li><code>key</code>的新的<code>hashcode</code>值是通过调用<code>hashcode()</code>方法并和调用结果的高十六位作异或运算，增加了随机性，减少哈希碰撞</li><li><code>Threshold</code>的计算方法是<code>load factor * capacity</code></li><li>扩容的时候需要重新创建一个新数组，新数组的长度是老数组的两倍<code>通过位运算实现</code>，然后遍历整个老结构，把所有的元素重新hash分配到新结构中去</li></ul><h3 id="1-3-HashMap-get的过程"><a href="#1-3-HashMap-get的过程" class="headerlink" title="1.3 HashMap get的过程"></a>1.3 HashMap get的过程</h3><p><img src="C:\Users\Xdd\AppData\Roaming\Typora\typora-user-images\image-20220223091727619.png" alt="image-20220223091727619"></p><h3 id="1-4-当HashMap-put时hashcode相同怎么办"><a href="#1-4-当HashMap-put时hashcode相同怎么办" class="headerlink" title="1.4 当HashMap put时hashcode相同怎么办"></a>1.4 当HashMap put时hashcode相同怎么办</h3><p>会产生哈希碰撞，此时要调用<code>equals()</code>方法判断两个<code>key</code>是否一样，一样的话就覆盖<code>value</code>，否则 链接到链表后面，或者转为红黑树。</p><blockquote><p><code>hashcode</code>相同，对象不一定相同，所以要通过<code>equals</code> 比较。<code>hashocde</code>不同就不用比了，肯定不同。</p><p>两个对象相同（没重写的equals相同），<code>hashcode</code>一定要相同</p></blockquote><h3 id="1-5-HashMap中的负载因子的作用"><a href="#1-5-HashMap中的负载因子的作用" class="headerlink" title="1.5 HashMap中的负载因子的作用"></a>1.5 HashMap中的负载因子的作用</h3><p><code>load factor</code>表示了<code>hashmap</code>的最大拥挤程度。值较小能保证哈希碰撞较少，但可能会频繁扩容；值较大能保证不会频繁扩容，但可能出现哈希碰撞。</p><h3 id="1-6-HashMap为什么引入红黑树的概念"><a href="#1-6-HashMap为什么引入红黑树的概念" class="headerlink" title="1.6 HashMap为什么引入红黑树的概念"></a>1.6 HashMap为什么引入红黑树的概念</h3><p><code>HashMap</code>中哈希碰撞是在所难免的，因此肯定会有链表的结构，但是链表会变得很长，此时的复杂度就是O(n),这就失去了<code>HashMap</code>的优势。所以引入了红黑树的结构。</p><hr><h2 id="2-ThreadLocal"><a href="#2-ThreadLocal" class="headerlink" title="2. ThreadLocal"></a>2. ThreadLocal</h2><h3 id="2-1-ThreadLocal是什么"><a href="#2-1-ThreadLocal是什么" class="headerlink" title="2.1 ThreadLocal是什么"></a>2.1 ThreadLocal是什么</h3><p><code>ThreadLocal</code> 用来修斯局部变量，它为每个使用该变量的线程提供了独立的变量副本。每个线程可以修改自己线程内的变量副本，但不会影响其他线程的变量副本。</p><p>如：两个线程不能共享一个<code>connection</code>，否则会造成意外情况。这时就可以使用<code>ThreadLocal</code>来修饰。</p><h3 id="2-2-实现原理"><a href="#2-2-实现原理" class="headerlink" title="2.2 实现原理"></a>2.2 实现原理</h3><p><code>Thread</code>类中维护了一个<code>ConcurrrentHashMap</code>,该<code>Map</code>的键为线程对象，对应的值是对应线程的变量副本</p><h3 id="2-3-ThreaLocal和线程同步机制有什么区别"><a href="#2-3-ThreaLocal和线程同步机制有什么区别" class="headerlink" title="2.3 ThreaLocal和线程同步机制有什么区别"></a>2.3 ThreaLocal和线程同步机制有什么区别</h3><p><code>同步机制</code>中，是通过<code>锁机制</code>来保证同一时间只有一个线程访问变量。这时这个变量是<code>多个线程共享的</code>。代价就是效率低，用空间换时间。</p><p><code>ThreadLocal</code>是通从给每一个线程提供一个变量的副本，从而隔绝了多个线程对同一数据的访问冲突。因为每个线程都拥有自己的变量副本，就没有必要进行线程同步了。代价是空间较大，用空间换时间。</p><hr><h2 id="3-垃圾回收"><a href="#3-垃圾回收" class="headerlink" title="3. 垃圾回收"></a>3. 垃圾回收</h2><h3 id="3-1GC-Root"><a href="#3-1GC-Root" class="headerlink" title="3.1GC-Root"></a>3.1GC-Root</h3><h4 id="3-1-1-什么是GC-root"><a href="#3-1-1-什么是GC-root" class="headerlink" title="3.1.1 什么是GC-root"></a>3.1.1 什么是GC-root</h4><p><code>GC-root</code>是一类引用的集合。</p><p>因为<code>Java</code>需要垃圾回收，对象在被回收时要判断是否存活，而判断是否存活，则需要用到<code>可达性算法</code>。可达性算法是以某个对象为起点，引出指向的下一个节点……这样，便会形成一条引用链。当对象不在这些链条中时，就说明没有被引用，就会被判定为垃圾对象，就会被GC回收。而这些链的起点便称之为<code>GC-Root</code>。</p><h4 id="3-1-2-哪些对象可以作为GC-Root"><a href="#3-1-2-哪些对象可以作为GC-Root" class="headerlink" title="3.1.2 哪些对象可以作为GC-Root"></a>3.1.2 哪些对象可以作为GC-Root</h4><ul><li><p>虚拟机栈中引用的对象</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">publicclass Test &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">Test a = <span class="keyword">new</span> Test(); <span class="comment">//引用变量此时在栈中</span></span><br><span class="line">a = <span class="keyword">null</span>;<span class="comment">//栈中的变量和堆中的变量失去连接</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><ul><li><p>本地方法栈中引用的对象</p></li><li><p>方法区中类静态属性引用的对象</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Test s;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">Test a = <span class="keyword">new</span> Test();</span><br><span class="line">a.s = <span class="keyword">new</span> Test();</span><br><span class="line">a = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><ul><li><p>方法区中常量引用的对象</p><p>~~~java<br>public class Test {</p><pre><code>public static final Test s = new Test();    public static void main(String[] args) &#123;    Test a = new Test();    a = null;    &#125;</code></pre><p>}</p></li></ul><h3 id="3-2-有哪些垃圾回收器"><a href="#3-2-有哪些垃圾回收器" class="headerlink" title="3.2 有哪些垃圾回收器"></a>3.2 有哪些垃圾回收器</h3><h4 id="3-2-1-并发标记清理回收（CMS）"><a href="#3-2-1-并发标记清理回收（CMS）" class="headerlink" title="3.2.1 并发标记清理回收（CMS）"></a>3.2.1 并发标记清理回收（CMS）</h4><ul><li>在年轻代中使用<code>拷贝算法</code>，这种方法会暂停用户线程</li><li>在老年代中使用<code>最大并发量的标记清除算法</code>，这个方法将会花费大量时间在“标记-&gt;清理”阶段。这个阶段可以和用户线程并发执行（虽然仍然会和应用程序竞争CPU时间）</li></ul><h5 id="具体回收步骤"><a href="#具体回收步骤" class="headerlink" title="具体回收步骤"></a>具体回收步骤</h5><ul><li>初始标记：标记那些可以从root集直接可达或者被年轻代引用的对象。（会暂停用户线程）</li><li>并发标记：从初始标记的结点开始进一步标记几乎所有被引用的对象。但有些对象可能会在运行过程中改变引用，所以并不是所有的对象。（与用户线程并发执行）</li><li>并发预清理：在上一步的标记过程中，有些节点的引用关系发生了改变，会导致标记的不准确。这些对象称为<code>dirty对象</code>。从这些对象出发继续标记。（与用户线程并发清理）</li><li>并行的可被终止的预清理：这个阶段执行一些预清理，减少最终阶段对应用暂停的时间（与用户线程并发执行）</li><li>重标记：暂停用户线程，来确定并标记老年代中最终所有存活的对象（暂停用户线程）</li><li>并行清理：删除所有不再被使用的对象并回收内存。（和应用程序并发执行）</li><li>并发重置：为下一次运行做准备</li></ul><h3 id="3-2-3-G1"><a href="#3-2-3-G1" class="headerlink" title="3.2.3 G1"></a>3.2.3 G1</h3><ul><li>最大的特点是<code>可预测性</code>：可以预测GC暂停用户线程的时间，并提供了设置暂停时间的选项</li><li>将内存划分为四个区域：<ul><li>年轻代：<ul><li>Eden</li><li>Survivor</li></ul></li><li>老年代</li><li>Humongous：专门用于存放占用分区容量超过50%的对象</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-HashMap&quot;&gt;&lt;a href=&quot;#1-HashMap&quot; class=&quot;headerlink&quot; title=&quot;1. HashMap&quot;&gt;&lt;/a&gt;1. HashMap&lt;/h2&gt;&lt;h3 id=&quot;1-1-HashMap-的特点&quot;&gt;&lt;a href=&quot;#1-1-Hash</summary>
+      
+    
+    
+    
+    
+    <category term="https://tse2-mm.cn.bing.net/th/id/OIP-C.6ny7wZgPmRTB_3OucaYivwHaE9?w=267&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.25&amp;pid=1.7" scheme="https://michael-d-666.github.io/tags/https-tse2-mm-cn-bing-net-th-id-OIP-C-6ny7wZgPmRTB-3OucaYivwHaE9-w-267-h-180-c-7-r-0-o-5-dpr-1-25-pid-1-7/"/>
+    
+  </entry>
   
   <entry>
     <title>Day2-MySQL.存储引擎-索引-事务</title>
@@ -70,26 +92,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a&gt;前情提要&lt;/h2&gt;&lt;p&gt;最近买了个阿里云的服务器，想捣鼓捣鼓ubuntu中的一些东西。弄着弄着发现自己只会&lt;strong&gt;sudo apt-get&lt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java源码</title>
-    <link href="https://michael-d-666.github.io/2022/02/11/Java%E6%BA%90%E7%A0%81/"/>
-    <id>https://michael-d-666.github.io/2022/02/11/Java%E6%BA%90%E7%A0%81/</id>
-    <published>2022-02-11T04:37:22.000Z</published>
-    <updated>2022-02-12T02:24:42.642Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ArrayList源码"><a href="#ArrayList源码" class="headerlink" title="ArrayList源码"></a>ArrayList源码</h2><h3 id="继承变量"><a href="#继承变量" class="headerlink" title="继承变量"></a>继承变量</h3><p><img src="https://s2.loli.net/2022/02/11/NVOmpwBruv7JERC.png" alt="image-20220211135354197"></p><blockquote><p>作用：保证线程安全。我们知道 java.util.HashMap 不是线程安全的，因此如果在使用迭代器的过程中有其他线程修改了map，那么将抛出ConcurrentModificationException，这就是所谓fail-fast策略。这一策略在源码中的实现是通过 modCount 域，modCount 顾名思义就是修改次数，对HashMap 内容的修改都将增加这个值，那么在迭代器初始化过程中会将这个值赋给迭代器的 expectedModCount。在迭代过程中，判断 modCount 跟 expectedModCount 是否相等，如果不相等就表示已经有其他线程修改了 Map：注意到 modCount 声明为 volatile，保证线程之间修改的可见性。</p></blockquote><h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h3><p><img src="https://s2.loli.net/2022/02/11/ObSgZxtq3rCHsoL.png" alt="image-20220211130203819"></p><blockquote><p>SerialVersionUID：因为ArrayList实现了可序列化接口，所以指定了ID，以免计算<br>DEFAULT_CAPACITY：默认容量是10<br>EMPTY_ELEMENTDATA：代表一个真正的空数组，容量为0，实际size也为0<br>DEFAULTCAPACITY_EMPTY_ELEMENTDATA：是一个空数组，但容量初始默认为10，但不是初始化的时候为10，而是第一次add才变为10<br>elementData：ArrayList的缓冲区<br>size：ArrayList的空间大小</p></blockquote><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p><img src="https://s2.loli.net/2022/02/11/zIXPkmxiytnR2HU.png" alt="image-20220211125439429"></p><blockquote><p>三个构造函数，注意第一个的第二种情况，初始化了一个真正容量为0，size也为0的数组：EMPTY_ELEMENTDATA</p></blockquote><h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><p><img src="https://s2.loli.net/2022/02/11/G1hnvTQAxubEfNg.png" alt="image-20220211130634873"></p><blockquote><p>当调用add方法时，判断是否需要扩容，调用<strong>grow()</strong>方法扩容</p></blockquote><p><img src="https://s2.loli.net/2022/02/11/vSfCkED4wmiTnM3.png" alt="image-20220211132622582"></p><blockquote><p>调用<strong>grow()</strong>后，如果原来不是真正的空数组，则初始化至少为10。如果原来已经有容量，则扩容为约1.5倍（右移一位相当于0.5）</p></blockquote><p><img src="https://s2.loli.net/2022/02/11/aGbO1q97tfE6rWe.png" alt="image-20220211134239026"></p><blockquote><p>立刻将容量调整为指定大小，而不是每次判断扩容</p></blockquote><p><img src="https://s2.loli.net/2022/02/11/QxvZRpVDwFGUuYj.png" alt="image-20220211134632788"></p><blockquote><p>判断是否包含某一元素，是看调用<strong>indexof()</strong>返回的下标是否大于等于0。而<strong>indexof()</strong>底层也是通过for循环遍历</p></blockquote><h2 id="HashMap源码"><a href="#HashMap源码" class="headerlink" title="HashMap源码"></a>HashMap源码</h2><p><img src="https://s2.loli.net/2022/02/12/4IQp9btjDdy5xFT.png" alt="image-20220212094341756"></p><h3 id="成员变量-1"><a href="#成员变量-1" class="headerlink" title="成员变量"></a>成员变量</h3><p><img src="https://s2.loli.net/2022/02/11/gitLfkoq9nGwsDp.png" alt="image-20220211154834693"></p><blockquote><p>DEFAULT_INITIAL_CAPACITY：默认容量，太小容易触发扩容。太大遍历哈希表会较慢<br>TREEIFY_THRESHOLD：链表转化为红黑树的阈值（一个node节点下的值得个数大于8）<br>UNTREEIFY_THRESHOLD：红黑树退回链表的阈值（单个node节点下的值的个数小于6）<br>MIN_TREEITY_CAPACITY：转化为树前，还要进行一次键值对的数量判断（所有节点总共的值超过64个 ）</p><p>HashMap 的默认初始容量（capacity）是 16，capacity 必须为 2 的幂次方；默认负载因子（load factor）是 0.75；实际能存放的节点个数（threshold，即触发扩容的阈值）= capacity * load factor。</p></blockquote><h3 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h3><p><img src="C:\Users\Xdd\AppData\Roaming\Typora\typora-user-images\image-20220211164856372.png" alt="image-20220211164856372"></p><h3 id="成员函数-1"><a href="#成员函数-1" class="headerlink" title="成员函数"></a>成员函数</h3><p><img src="https://s2.loli.net/2022/02/11/7sVFCeiYQODpbKz.png" alt="image-20220211165820842"></p><blockquote><p>找到大于等于cap的最小的2的幂</p></blockquote><p><img src="https://s2.loli.net/2022/02/12/KoPsif7jlATg6zx.png" alt="image-20220212101036270"></p><p><img src="https://s2.loli.net/2022/02/12/seL5dak9lPzgTXf.png" alt="image-20220212101325090"></p><blockquote><p>用于定位哈希桶数组。<br>首先得到key的hashcode，再和hashcode 的高16位进行异或操作，作为key的新的hash值<br>最后将hash和table的长度-1相与，得到最后的存放的位置</p><p>使用&amp;运算是来代替%运算的。相比而言，&amp;运算更加高效<br><img src="https://s2.loli.net/2022/02/12/bxU2HFzEjlgprXv.png" alt="image-20220212101909067" style="zoom:33%;" /></p><p>HashMap 在触发扩容后，阈值会变为原来的 2 倍，并且会对所有节点进行重 hash 分布，重 hash 分布后节点的新分布位置只可能有两个：“原索引位置” 或 “原索引+oldCap位置”。例如 capacity 为16，索引位置 5 的节点扩容后，只可能分布在新表 “索引位置5” 和 “索引位置21（5+16）”。</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;ArrayList源码&quot;&gt;&lt;a href=&quot;#ArrayList源码&quot; class=&quot;headerlink&quot; title=&quot;ArrayList源码&quot;&gt;&lt;/a&gt;ArrayList源码&lt;/h2&gt;&lt;h3 id=&quot;继承变量&quot;&gt;&lt;a href=&quot;#继承变量&quot; class=&quot;</summary>
       
     
     
@@ -269,26 +271,6 @@
     
     
     <category term="大三课程" scheme="https://michael-d-666.github.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://michael-d-666.github.io/2021/12/05/hello-world/"/>
-    <id>https://michael-d-666.github.io/2021/12/05/hello-world/</id>
-    <published>2021-12-05T14:59:02.219Z</published>
-    <updated>2021-12-06T08:52:44.735Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="第二次踩坑"><a href="#第二次踩坑" class="headerlink" title="第二次踩坑"></a>第二次踩坑</h3><p>网站的背景想要改成渐变的颜色，可是怎么该也仍然是纯白的背景，而且网站打开检查发现也是可以接收的。在本地浏览是可以成功看到的。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p><img src="https://s2.loli.net/2021/12/06/QWTzrOiGNvSkyeb.png" alt="image-20211206165112039"></p><p>在hexo的config配置文件下将url修改成网页地址。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;第二次踩坑&quot;&gt;&lt;a href=&quot;#第二次踩坑&quot; class=&quot;headerlink&quot; title=&quot;第二次踩坑&quot;&gt;&lt;/a&gt;第二次踩坑&lt;/h3&gt;&lt;p&gt;网站的背景想要改成渐变的颜色，可是怎么该也仍然是纯白的背景，而且网站打开检查发现也是可以接收的。在本地浏览是可以成功</summary>
-      
-    
-    
-    
     
   </entry>
   

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-d-666.github.io/2022/02/23/Day3-HashMap-%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-d-666.github.io/2022/02/21/Day2-MySQL-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</loc>
     
     <lastmod>2022-02-22</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://michael-d-666.github.io/2022/02/15/Ubuntu%E4%B8%AD%E4%B8%8B%E8%BD%BD%E7%9A%84%E8%BD%AF%E4%BB%B6%E4%BD%8D%E7%BD%AE/</loc>
     
     <lastmod>2022-02-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://michael-d-666.github.io/2022/02/11/Java%E6%BA%90%E7%A0%81/</loc>
-    
-    <lastmod>2022-02-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -109,19 +109,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://michael-d-666.github.io/2021/12/05/hello-world/</loc>
-    
-    <lastmod>2021-12-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://michael-d-666.github.io/</loc>
-    <lastmod>2022-02-22</lastmod>
+    <lastmod>2022-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,7 +120,14 @@
   
   <url>
     <loc>https://michael-d-666.github.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2022-02-22</lastmod>
+    <lastmod>2022-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-d-666.github.io/tags/https-tse2-mm-cn-bing-net-th-id-OIP-C-6ny7wZgPmRTB-3OucaYivwHaE9-w-267-h-180-c-7-r-0-o-5-dpr-1-25-pid-1-7/</loc>
+    <lastmod>2022-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
