@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-d-666.github.io/2022/02/23/redis/</loc>
+    
+    <lastmod>2022-02-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-d-666.github.io/2022/02/23/Nginx/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-d-666.github.io/2022/02/23/Day3-HashMap-%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     
     <lastmod>2022-02-23</lastmod>
@@ -112,22 +130,22 @@
 
   <url>
     <loc>https://michael-d-666.github.io/</loc>
-    <lastmod>2022-02-23</lastmod>
+    <lastmod>2022-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://michael-d-666.github.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2022-02-23</lastmod>
+    <loc>https://michael-d-666.github.io/tags/https-tse2-mm-cn-bing-net-th-id-OIP-C-6ny7wZgPmRTB-3OucaYivwHaE9-w-267-h-180-c-7-r-0-o-5-dpr-1-25-pid-1-7/</loc>
+    <lastmod>2022-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://michael-d-666.github.io/tags/https-tse2-mm-cn-bing-net-th-id-OIP-C-6ny7wZgPmRTB-3OucaYivwHaE9-w-267-h-180-c-7-r-0-o-5-dpr-1-25-pid-1-7/</loc>
-    <lastmod>2022-02-23</lastmod>
+    <loc>https://michael-d-666.github.io/tags/%E5%A4%A7%E4%B8%89%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2022-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
